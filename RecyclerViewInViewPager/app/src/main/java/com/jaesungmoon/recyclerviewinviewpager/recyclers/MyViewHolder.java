@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.jaesungmoon.recyclerviewinviewpager.R;
 
-public class MyViewHolder extends RecyclerView.ViewHolder {
+public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     ImageView imageView;
     TextView nameTxt;
@@ -16,14 +16,18 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public MyViewHolder(View itemView) {
         super(itemView);
 
-
         imageView = itemView.findViewById(R.id.movieImage);
         nameTxt = itemView.findViewById(R.id.nameText);
-
+        itemView.setOnClickListener(this);
 
     }
 
     public void setItemClickListener(ItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        itemClickListener.onItemClick(v, getLayoutPosition());
     }
 }

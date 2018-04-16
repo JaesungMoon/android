@@ -2,6 +2,12 @@ package com.jaesungmoon.recyclerviewinviewpager.recyclers;
 
 public class Movie {
 
+
+    public Movie(String name, int img) {
+        this.name = name;
+        this.img = img;
+    }
+
     private String name;
 
     public String getName() {

@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.jaesungmoon.recyclerviewinviewpager.R;
 
@@ -33,6 +34,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.nameTxt.setText(mMovieList.get(position).getName());
         holder.imageView.setImageResource(mMovieList.get(position).getImg());
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Toast.makeText(mContext, mMovieList.get(pos).getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
