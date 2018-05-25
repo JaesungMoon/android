@@ -11,6 +11,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
@@ -35,12 +39,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
+        TextView tv = findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
 
-
-        int a= 10;
         StudentRecord[] records = getStudentDetails();
+
+        List<StudentRecord> list = Arrays.asList(records);
+        ArrayList<StudentRecord> studentRecordList = new ArrayList<StudentRecord>(Arrays.asList(records));
+
         for(StudentRecord record:records){
             Log.w("MySample", "Name:"+record.name);
             Log.w("MySample", "Roll Number:"+record.rollNumber);

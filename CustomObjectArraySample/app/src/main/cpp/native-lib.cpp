@@ -16,12 +16,14 @@ Java_com_jaesung_customobjectarraysample_MainActivity_stringFromJNI(
 
 typedef struct _JNI_POSREC {
     jclass cls;
-    jmethodID constructortorID;
+    jmethodID constructorID;
+
     jfieldID nameID;
     jfieldID rollNumberID;
     jfieldID departementID;
     jfieldID totalMarkID;
     jfieldID hasReservationID;
+
 } JNI_POSREC;
 
 /**
@@ -70,13 +72,15 @@ void LoadJniPosRec(JNIEnv *env) {
 
     jniPosRec->cls = env->FindClass("com/jaesung/customobjectarraysample/StudentRecord");
 
-    if (jniPosRec->cls != NULL)
+    if (jniPosRec->cls != NULL) {
         printf("sucessfully created class");
-
-    jniPosRec->constructortorID = env->GetMethodID(jniPosRec->cls, "<init>", "()V");
-    if (jniPosRec->constructortorID != NULL) {
-        printf("sucessfully created ctorID");
     }
+
+    jniPosRec->constructorID = env->GetMethodID(jniPosRec->cls, "<init>", "()V");
+    if (jniPosRec->constructorID != NULL) {
+        printf("sucessfully created constructorID");
+    }
+
     jniPosRec->nameID = env->GetFieldID(jniPosRec->cls, "name", "Ljava/lang/String;");
     jniPosRec->rollNumberID = env->GetFieldID(jniPosRec->cls, "rollNumber", "I");
     jniPosRec->departementID = env->GetFieldID(jniPosRec->cls, "departement", "Ljava/lang/String;");
@@ -94,7 +98,7 @@ void FillStudentRecValuesToJni(JNIEnv *env, jobject jPosRec, SearchRecord *cPosR
                         env->NewStringUTF(cPosRec->departement.c_str()));
     jfloat totalMark = (jfloat) cPosRec->totalMark;
     env->SetFloatField(jPosRec, jniPosRec->totalMarkID, totalMark);
-    jboolean hasReservation = cPosRec->hasReservation;
+    jboolean hasReservation = (jboolean) cPosRec->hasReservation;
     env->SetBooleanField(jPosRec, jniPosRec->hasReservationID, hasReservation);
 }
 
@@ -108,11 +112,11 @@ Java_com_jaesung_customobjectarraysample_MainActivity_getStudentDetails(JNIEnv *
     std::vector<SearchRecord *> searchRecordResult;
     FillStudentRecordDetails(&searchRecordResult);
     printf("searchRecordResult size is = %ld", searchRecordResult.size());
-    jobjectArray jPosRecArray = env->NewObjectArray(searchRecordResult.size(), jniPosRec->cls,
+    jobjectArray jPosRecArray = env->NewObjectArray((jsize) searchRecordResult.size(), jniPosRec->cls,
                                                     NULL);
 
     for (size_t i = 0; i < searchRecordResult.size(); i++) {
-        jobject jPosRec = env->NewObject(jniPosRec->cls, jniPosRec->constructortorID);
+        jobject jPosRec = env->NewObject(jniPosRec->cls, jniPosRec->constructorID);
         FillStudentRecValuesToJni(env, jPosRec, searchRecordResult[i]);
         env->SetObjectArrayElement(jPosRecArray, i, jPosRec);
     }
