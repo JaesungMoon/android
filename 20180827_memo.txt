@@ -1,0 +1,16 @@
+Androidプロジェクトビルド時
+
+Error:org.gradle.process.internal.ExecException: A problem occurred starting process 'command 'C:\Users\...\AppData\Local\Android\sdk\ndk-bundle\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\bin\aarch64-linux-android-strip''
+
+
+Error:net.rubygrapefruit.platform.NativeException: Could not start 'C:\Users\...\AppData\Local\Android\sdk\ndk-bundle\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\bin\aarch64-linux-android-strip'
+
+
+Error:java.io.IOException: Cannot run program "C:\Users\...\AppData\Local\Android\sdk\ndk-bundle\toolchains\aarch64-linux-android-4.9\prebuilt\windows-x86_64\bin\aarch64-linux-android-strip" (in directory "E:\projectNmame\app"): CreateProcess error=2, The system cannot find the file specified
+
+のようなエラーに遭遇、原因はndkの特定バージョンを入れて入ればそうなるらしい
+
+対応：sdk managerからndkツールを削除（一旦使っているプロジェクトもないため）
+
+関連記事
+https://stackoverflow.com/questions/42739916/aarch64-linux-android-strip-file-missing
