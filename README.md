@@ -1,5 +1,7 @@
 # android
 
+android exercise, sample, snippet, prototyping, etc...
+
 ## project description
 
 #### CustomObjectArray
@@ -19,6 +21,12 @@ gradle-4.1
 https://github.com/woxblom/DragListView
 
 gradle-3.3
+
+#### LibrarySample
+
+java library(jar), android library(aar) sample
+
+gradle-6.7.1
 
 #### ListViewEx
 
