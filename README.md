@@ -1,31 +1,65 @@
 # android
 
+## project description
+
+#### CustomObjectArray
+
+to create arraylist using jni
+
+gradle-4.1
+
+#### CustomObjectArraySample
+
+to create arraylist using java
+
+gradle-4.1
+
+#### DragListView
+
+https://github.com/woxblom/DragListView
+
+gradle-3.3
+
+#### ListViewEx
+
+ListView sample
+
+gradle-4.1
+
+#### MyExpandableListView
+
+ExpandableListView sample
+
+gradle-4.4
+
+#### MyQrCodeReader
+
+qrcode reader sample using below library
+
+implementation 'com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.3'
+
+```java
+// callback when read qr code using camera.
+public void onQRCodeRead(String text, PointF[] points) {
+}
 ```
-final 意識するようになった
-null 意識するようになった
-nullチェック書かなくて済むようにする
-パラダイム
-@Nullable
-@NonNull
-guard節を考えるようになった
-do whileを書く
 
-enumを書く
+gradle-4.1
 
-defaultを考える
-関数型
-lambda
-generic
+#### NDKSnippet
 
-default valueの観点
-```
+empty ndk project
 
-目次を追加しておく
-中間休みを入れる
+gradle-4.4
 
-パラダイム
-（科学上の問題などについて）ある時代のものの見方・考え方を支配する認識の枠組み。
+#### RecyclerViewInViewPager
 
-目次と話の目的を前に話す
-結論も簡単に言えれば良い
+RecyclerView + ViewPager sample
 
+gradle-4.4
+
+#### SendParcelableObject
+
+android.os.parcel sample
+
+gradle-4.4
