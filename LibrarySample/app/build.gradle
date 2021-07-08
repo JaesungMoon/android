@@ -35,6 +35,7 @@ dependencies {
 
     // android library
     implementation project(path: ':my_aar')
+    implementation project(path: ':my_pure_aar')
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

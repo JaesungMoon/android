@@ -1,3 +1,4 @@
 rootProject.name = "LibrarySample"
 include ':app'
 include ':my_aar'
+include ':my_pure_aar'
