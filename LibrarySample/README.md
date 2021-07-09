@@ -62,3 +62,28 @@ almost same size aar output **14KB**
 implementation 'androidx.appcompat:appcompat:1.3.0'
 ```
 
+
+
+#### my_jar
+
+**982 byte**
+
+```groovy
+compileOnly files("${System.env.ANDROID_HOME}/platforms/android-30/android.jar")
+```
+
+can use `android.util.Log package`
+
+file size is smaller than my_pure_aar
+
+
+
+**implementation** is also same size with compileOnly?
+
+```groovy
+implementation files("${System.env.ANDROID_HOME}platforms/android-30/android.jar")
+```
+
+
+
+https://stackoverflow.com/questions/44493378/whats-the-difference-between-implementation-and-compile-in-gradle

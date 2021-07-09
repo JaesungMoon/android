@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/my_aar" />
+            <option value="$PROJECT_DIR$/my_jar" />
             <option value="$PROJECT_DIR$/my_pure_aar" />
           </set>
         </option>
