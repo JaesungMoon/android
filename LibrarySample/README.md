@@ -87,3 +87,10 @@ implementation files("${System.env.ANDROID_HOME}platforms/android-30/android.jar
 
 
 https://stackoverflow.com/questions/44493378/whats-the-difference-between-implementation-and-compile-in-gradle
+
+
+
+compile, compileOnly, compileInclude - old command but can understand easily.(jp)
+
+https://www.liferay.co.jp/en/-/blog/tech/gradle-compile-vs-compileonly-vs-compileinclude-jp
+
