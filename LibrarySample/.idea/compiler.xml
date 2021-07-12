@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="LibrarySample.app" target="11" />
+      <module name="LibrarySample.jar_in_aar" target="1.8" />
       <module name="LibrarySample.my_aar" target="11" />
       <module name="LibrarySample.my_pure_aar" target="11" />
     </bytecodeTargetLevel>

@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.library'
+}
+
+//plugins {
+//    id 'java-library'
+//}
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        minSdkVersion 21
+    }
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+
+dependencies {
+    compileOnly 'androidx.appcompat:appcompat:1.3.0'
+    def billing_version = "4.0.0"
+
+    compileOnly "com.android.billingclient:billing:$billing_version"
+    compileOnly "com.android.billingclient:billing-ktx:$billing_version"
+
+
+}
