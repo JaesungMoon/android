@@ -6,6 +6,10 @@ android exercise, sample, snippet, prototyping, etc...
 
 ## project description
 
+#### BillingLibraryEx
+
+billing sample using aar includes billing library.
+
 #### BillingV3
 
 billing sample using android billing library v3 or newer

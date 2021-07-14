@@ -1,0 +1,3 @@
+rootProject.name = "BillingLibraryEx"
+include ':app'
+include ':mylibrary'
